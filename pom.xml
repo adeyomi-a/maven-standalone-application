@@ -40,14 +40,14 @@
 	<distributionManagement>
 	    <repository>
 	      <id>nexus</id>
-	      <name>Landmark Technologies Releases Nexus Repository</name>
-	      <url>http://localhost:8081/repository/maven-releases/</url>
+	      <name>ScotiaBank-Release Repository</name>
+	      <url>http://172.17.0.1:8081/repository/ScotiaBank-Release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Landmark Technologies Snapshot Nexus Repository </name>
-	      <url>http://localhost:8081/repository/maven-snapshots/</url>
+	      <name>ScotiaBank-Snapshot Repository </name>
+	      <url>http://172.17.0.1:8081/repository/ScotiaBank-Snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
