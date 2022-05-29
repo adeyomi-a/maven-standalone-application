@@ -3,24 +3,26 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.mt</groupId>
-	<artifactId>maven-stanalone-application</artifactId>
+	<artifactId>maven-standalone-application</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>maven-stanalone-application</name>
+	<name>maven-standalone-application</name>
 	<url>http://mylandmarktech.com</url>
 
 	<organization>
-		<name>Mithun Technologies</name>
+		<name>Landmark Technologies</name>
 		<url>http://mylandmarktech.com/</url>
 	</organization>
 	
 	<description>Maven Standalone Application</description>
 
 	<properties>
-		<sonar.host.url>http://35.154.242.68:9000/</sonar.host.url>
+		<sonar.host.url>http://172.17.0.1:9000/</sonar.host.url>
 		<sonar.login>admin</sonar.login>
-		<sonar.password>admin</sonar.password>
+		<sonar.password>admin@101</sonar.password>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
@@ -34,6 +36,21 @@
 		</dependency>
 
 	</dependencies>
+	
+	<distributionManagement>
+	    <repository>
+	      <id>nexus</id>
+	      <name>ScotiaBank-Release Repository</name>
+	      <url>http://172.17.0.1:8081/repository/ScotiaBank-Release/</url>
+	    </repository>
+	    
+	    <snapshotRepository>
+	      <id>nexus</id>
+	      <name>ScotiaBank-Snapshot Repository </name>
+	      <url>http://172.17.0.1:8081/repository/ScotiaBank-Snapshot/</url>
+	    </snapshotRepository>
+	    
+	</distributionManagement>
 
 	<!-- Committing and updating changes through Maven, by using below mvn command. 
 		For Commiting mvn -Dmessage="Updated using maven" scm:checkin For updating 
@@ -56,8 +73,8 @@
 	    <plugin>
 	      <!-- Build an executable JAR -->
 	      <groupId>org.apache.maven.plugins</groupId>
-	      <artifactId>maven-jar-plugin</artifactId>
-	      <version>3.1.0</version>
+	      <artifactId>maven-compile-plugin</artifactId>
+	      <version>3.10.1</version>
 	      <configuration>
 	        <archive>
 	          <manifest>
